@@ -1,4 +1,29 @@
+# ============================================================
+#  WARNING: this repo lives in C:\Users\tiend  (the HOME folder).
+#  It default-DENIES the whole home directory so a stray
+#  `git add .` can never commit secrets (.ssh keys, cookies,
+#  tokens) or giant folders like Downloads\NRO (~1.9 GB).
+#
+#  `/*` is anchored, so it excludes each TOP-LEVEL entry itself.
+#  Because the directory itself is excluded, nested .gitignore
+#  files (e.g. .cursor/.gitignore) cannot re-include anything
+#  inside them.
+#
+#  To track something new, whitelist it below, e.g.
+#      !/some-folder/
+#      !/some-folder/**
+# ============================================================
+
+# 1. deny every top-level file and folder
+/*
+# 2. ...then allow only what belongs to this repo
+!/.gitignore
+!/README.md
+!/tuantomo97/
+!/tuantomo97/**
+
+# OS / editor noise (applies everywhere)
 Thumbs.db
 desktop.ini
-*.tmp
 .DS_Store
+*.tmp
